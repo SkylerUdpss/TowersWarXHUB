@@ -495,3 +495,23 @@ island:AddButton("PUENTE>CENTRO<", function()
 	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1.36, 133.32, -0.96))
 end)
 
+island:AddButton("PROTECCION AMARILLA", function()
+	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(106.51, 129.19, 0.80))
+end)
+
+island:AddButton("PROTECCIÓN ROJA", function()
+	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1.36, 133.32, -0.96))
+end) 
+
+island:AddButton("PROTECCIÓN VERDE", function()
+	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1.15, 129.19, -98.12))
+end)
+
+island:AddButton("PROTECCIÓN AZUL", function()
+	
+end)
+
+ 
+
+  
+
