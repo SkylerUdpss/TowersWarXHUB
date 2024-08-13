@@ -461,7 +461,7 @@ end
  
  
 local island = library:CreateWindow({
-	text = "Towers Wars XHUB:"
+	text = "Towers Wars XHUB V2:"
 })
  
 local example = library:CreateWindow({
@@ -509,6 +509,10 @@ end)
 
 island:AddButton("PROTECCIÓN AZUL", function()
 	game.Players.LocalPlayer.Character:MoveTo(Vector3.new(0.72, 129.19, 99.58))
+end)
+
+island:AddButton("SPEED HACK", function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
 end)
 
 island:AddButton("SKYLERMODZ", function()	
