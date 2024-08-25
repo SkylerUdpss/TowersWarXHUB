@@ -71,6 +71,7 @@ Tab1:AddButton({
 
 Tab1:AddButton({
   Name = "PROTECCIÓN VERDE",
+  TextColor3 = Color3.fromRGB(0, 255, 0)
   Callback = function()
     game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1.15, 129.19, -98.12))
   end
