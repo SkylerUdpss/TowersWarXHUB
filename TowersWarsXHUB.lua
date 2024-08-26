@@ -1,8 +1,10 @@
+
+ 
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Source.Lua"))()
 
 local Window = redzlib:MakeWindow({
   Title = "TowerWasXHUB",
-  SubTitle = "Versión 1.3.1 BETA By SkylerModz",
+  SubTitle = "Versión 1.3.1 beta By SkylerModz",
   SaveFolder = "Redz Config"
 })
 
@@ -12,7 +14,12 @@ local Tab1 = Window:MakeTab({
   Icon = "cool"
 })
 
--- Buttons
+local Tab2 = Window:MakeTab({
+  Name = "Player",
+  Icon = "cool"
+})
+
+-- Tab1 - Teleport
 Tab1:AddButton({
   Name = "TORRE AMARILLA",
   Callback = function()
@@ -58,7 +65,7 @@ Tab1:AddButton({
 Tab1:AddButton({
   Name = "PROTECCIÓN ROJA",
   Callback = function()
-    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1.36, 133.32, -0.96))
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-97.70, 129.19, -2.30))
   end
 })
 
@@ -71,7 +78,6 @@ Tab1:AddButton({
 
 Tab1:AddButton({
   Name = "PROTECCIÓN VERDE",
-  TextColor3 = Color3.fromRGB(0, 255, 0)
   Callback = function()
     game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-1.15, 129.19, -98.12))
   end
@@ -96,5 +102,13 @@ Tab1:AddSlider({
   Default = 16,
   Callback = function(Value)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
+
+-- Tab2 - Player
+Tab2:AddButton({
+  Name = "Test",
+  Callback = function()
+    print("Test button pressed")
   end
 })
