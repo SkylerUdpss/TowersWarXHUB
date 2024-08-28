@@ -2,7 +2,7 @@ local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzH
 
 local Window = redzlib:MakeWindow({
   Title = "TowerWasXHUB",
-  SubTitle = "Versión 1.3.1 beeta By SkylerModz",
+  SubTitle = "Versión 1.3.2 beta By SkylerModz",
   SaveFolder = "Redz Config"
 })
 
@@ -80,6 +80,13 @@ Tab1:AddButton({
   end
 })
 
+Tab1:AddButton({
+  Name = "ZONA SEGURA",
+  Callback = function()
+    game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-48.41, 387.49, 121.52))
+  end
+})
+
 -- Toggle
 local Toggle1 = Tab1:AddToggle({
   Name = "Speed",
@@ -114,7 +121,7 @@ Tab2:AddButton({
 Tab2:AddSlider({
   Name = "JumpPower",
   Min = 1,
-  Max = 100,
+  Max = 150,
   Increase = 1,
   Default = 50,
   Callback = function(Value)
@@ -122,7 +129,7 @@ Tab2:AddSlider({
   end
 })
 
--- Switch para Noclip en Tab2
+-- Switch para Noclip 
 local noclipEnabled = false
 Tab2:AddToggle({
   Name = "Noclip",
@@ -130,13 +137,11 @@ Tab2:AddToggle({
   Callback = function(Value)
     noclipEnabled = Value
     local character = game.Players.LocalPlayer.Character
-    if character and character:FindFirstChild("Humanoid") then
-      local humanoid = character.Humanoid
-      humanoid.PlatformStand = noclipEnabled
-      if noclipEnabled then
-        humanoid:ChangeState(Enum.HumanoidStateType.Physics)
-      else
-        humanoid:ChangeState(Enum.HumanoidStateType:GetEnum("GetUp"))
+    if character then
+      for _, part in ipairs(character:GetChildren()) do
+        if part:IsA("BasePart") then
+          part.CanCollide = not noclipEnabled
+        end
       end
     end
   end
