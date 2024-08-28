@@ -1,5 +1,3 @@
-
- 
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RedzLibV5/main/Source.Lua"))()
 
 local Window = redzlib:MakeWindow({
@@ -109,5 +107,37 @@ Tab2:AddButton({
   Name = "Test",
   Callback = function()
     print("Test button pressed")
+  end
+})
+
+-- Slider para JumpPower en Tab2
+Tab2:AddSlider({
+  Name = "JumpPower",
+  Min = 1,
+  Max = 100,
+  Increase = 1,
+  Default = 50,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+  end
+})
+
+-- Switch para Noclip en Tab2
+local noclipEnabled = false
+Tab2:AddToggle({
+  Name = "Noclip",
+  Default = false,
+  Callback = function(Value)
+    noclipEnabled = Value
+    local character = game.Players.LocalPlayer.Character
+    if character and character:FindFirstChild("Humanoid") then
+      local humanoid = character.Humanoid
+      humanoid.PlatformStand = noclipEnabled
+      if noclipEnabled then
+        humanoid:ChangeState(Enum.HumanoidStateType.Physics)
+      else
+        humanoid:ChangeState(Enum.HumanoidStateType:GetEnum("GetUp"))
+      end
+    end
   end
 })
