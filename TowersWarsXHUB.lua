@@ -15,8 +15,7 @@ local Tab1 = Window:MakeTab({
 })
 
 local Tab2 = Window:MakeTab({
-  Name = "Player",
-  Icon = "cool"
+  Name = "Player"
 })
 
 -- Tab1 - Teleport
