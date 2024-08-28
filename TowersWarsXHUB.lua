@@ -4,7 +4,7 @@ local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzH
 
 local Window = redzlib:MakeWindow({
   Title = "TowerWasXHUB",
-  SubTitle = "Versión 1.3.1 beta By SkylerModz",
+  SubTitle = "Versión 1.3.1 beeta By SkylerModz",
   SaveFolder = "Redz Config"
 })
 
